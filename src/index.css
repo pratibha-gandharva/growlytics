@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Botanical Modern Warm Palette (Light Mode) */
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Base backgrounds */
+    --background: #fbfbf7;           /* Warm linen cream */
+    --background-subtle: #f4f5ee;    /* Soft pale sage/canvas */
+    --foreground: #1c261e;           /* Deep botanical slate */
+    
+    /* Card & Popovers */
+    --card: #ffffff;
+    --card-foreground: #1c261e;
+    --card-hover: #fafbf8;
+    --popover: #ffffff;
+    --popover-foreground: #1c261e;
+
+    /* Primary Accent: Sage Forest */
+    --primary: #2d6a4f;              /* Deep rich forest emerald */
+    --primary-foreground: #ffffff;
+    --primary-hover: #1b4332;
+    --primary-subtle: #e8f5e9;
+
+    /* Secondary Accent: Soft Lavender */
+    --secondary: #eeeaf8;            /* Soft lavender mist */
+    --secondary-foreground: #4a3e75;
+    --secondary-hover: #e3dcf4;
+
+    /* Accent & Highlights: Peach & Warm Gold */
+    --accent-peach: #fbeee6;
+    --accent-peach-text: #9a4820;
+    --accent-gold: #fef5e7;
+    --accent-gold-text: #936015;
+
+    /* Botanical Muted & Borders */
+    --muted: #f0f2eb;
+    --muted-foreground: #616e64;
+    --border: #e2e6dd;
+    --border-hover: #ccd4c5;
+    --input: #e2e6dd;
+    --ring: #2d6a4f;
+
+    /* Status Colors */
+    --success: #15803d;
+    --success-subtle: #dcfce7;
+    --success-foreground: #14532d;
+
+    --warning: #b45309;
+    --warning-subtle: #fef3c7;
+    --warning-foreground: #78350f;
+
+    --danger: #b91c1c;
+    --danger-subtle: #fee2e2;
+    --danger-foreground: #7f1d1d;
+
+    --info: #0369a1;
+    --info-subtle: #e0f2fe;
+    --info-foreground: #075985;
+
+    /* Border radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px rgba(45, 106, 79, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    --shadow-card: 0 10px 30px -4px rgba(45, 106, 79, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+    --shadow-glow: 0 0 20px -4px rgba(45, 106, 79, 0.25);
+  }
+
+  .dark {
+    /* Botanical Midnight Charcoal (Dark Mode) */
+    --background: #0d1310;           /* Midnight pine obsidian */
+    --background-subtle: #131c17;    /* Deep forest charcoal */
+    --foreground: #eef2ed;           /* Pale mist */
+
+    /* Card & Popovers */
+    --card: #16201a;
+    --card-foreground: #eef2ed;
+    --card-hover: #1c2821;
+    --popover: #16201a;
+    --popover-foreground: #eef2ed;
+
+    /* Primary Accent: Luminous Sage Sprout */
+    --primary: #40916c;              /* Radiant organic emerald */
+    --primary-foreground: #0d1310;
+    --primary-hover: #52b788;
+    --primary-subtle: #193124;
+
+    /* Secondary Accent: Nocturne Lavender */
+    --secondary: #272338;
+    --secondary-foreground: #d2c8f0;
+    --secondary-hover: #342f4c;
+
+    /* Accent & Highlights */
+    --accent-peach: #36221a;
+    --accent-peach-text: #fbb694;
+    --accent-gold: #382d19;
+    --accent-gold-text: #fde047;
+
+    /* Muted & Borders */
+    --muted: #1e2b23;
+    --muted-foreground: #9db1a2;
+    --border: #24352b;
+    --border-hover: #374e40;
+    --input: #24352b;
+    --ring: #52b788;
+
+    /* Status Colors */
+    --success: #22c55e;
+    --success-subtle: #143522;
+    --success-foreground: #86efac;
+
+    --warning: #f59e0b;
+    --warning-subtle: #36250e;
+    --warning-foreground: #fde68a;
+
+    --danger: #ef4444;
+    --danger-subtle: #3a1515;
+    --danger-foreground: #fca5a5;
+
+    --info: #38bdf8;
+    --info-subtle: #0f2c3d;
+    --info-foreground: #bae6fd;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 10px 30px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --shadow-glow: 0 0 24px -4px rgba(82, 183, 136, 0.3);
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sproutWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sprout {
+  animation: sproutWiggle 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Stagger classes */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
